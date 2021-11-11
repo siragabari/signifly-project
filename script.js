@@ -25,7 +25,7 @@ import logoSvg from "./public/logo.svg";
 
 export const start = () => {
     // Set background image
-    document.body.style.backgroundImage = webBackground;
+    document.body.style.backgroundImage = "url("+webBackground+")";
     // Open the form
     document.getElementById("start").addEventListener('click', managingForm);
     // Close the form
