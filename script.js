@@ -18,6 +18,10 @@ let usedEmails;
 let selectedGames;
 let selectedSkills;
 
+import eyeOpen from "./public/eye.png";
+import eyeClose from "./public/eye_crossed.png";
+import background from "./public/web-background.png";
+
 export const start = () => {
     // Open the form
     document.getElementById("start").addEventListener('click', managingForm);
@@ -47,9 +51,9 @@ function clearing() {
     });
     // Reset passwords
     document.getElementById("password").type = "password";
-    document.getElementById("togglePassword").src = 'public/eye_crossed.png';
+    document.getElementById("togglePassword").src = eyeClose;
     document.getElementById("confirmPassword").type = "password";
-    document.getElementById("toggleConfirmPassword").src = 'public/eye_crossed.png';
+    document.getElementById("toggleConfirmPassword").src = eyeClose;
 }
 
 function managingForm() {
@@ -119,10 +123,10 @@ function togglingPassword() {
     const password = document.getElementById('passwordIn');
     if (password.type === "password") {
         password.type = "text";
-        document.getElementById('togglePassword').src= "public/eye.png";
+        document.getElementById('togglePassword').src= eyeOpen;
     } else {
         password.type = "password";
-        document.getElementById('togglePassword').src= "public/eye_crossed.png";
+        document.getElementById('togglePassword').src= eyeClose;
     }
 }
 
@@ -131,10 +135,10 @@ function togglingConfirmPassword() {
     const confirmPassword = document.getElementById('confirmPasswordIn');
     if (confirmPassword.type === "password") {
         confirmPassword.type = "text";
-        document.getElementById('toggleConfirmPassword').src= "public/eye.png";
+        document.getElementById('toggleConfirmPassword').src= eyeOpen;
     } else {
         confirmPassword.type = "password";
-        document.getElementById('toggleConfirmPassword').src= "public/eye_crossed.png";
+        document.getElementById('toggleConfirmPassword').src= eyeClose;
     }
 }
 
