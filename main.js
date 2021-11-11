@@ -1,6 +1,6 @@
 import './style/main.scss';
 
-import { start } from './public/script.js';
+import { start } from './script.js';
 export default start({});
 
 
