@@ -389,34 +389,26 @@ function saveData() {
 }
 
 function post() {
-    console.log(newUser);
-    // User registered message
-    alert("User @" + newUser.gametag + " has been registered successfully");
-    // Clear form
-    clearing();
-    // Hide the form
-    document.getElementById("info-wrapper").style.display = "none";
-    document.getElementById("form-container").style.display = "none";
-    
-    // const postData = JSON.stringify(newUser);
-    // fetch("https://signiflyproject-7ef5.restdb.io/rest/users-list", {
-    // method: "post",
-    // headers: {
-    //     "Content-Type": "application/json; charset=utf-8",
-    //     "x-apikey": "618cb901fc71545b0f5e06b0",
-    //     "cache-control": "no-cache"
-    // },
-    // body: postData
-    // })
-    // .then(res => res.json())
-    // .then(data => {
-    //     // User registered message
-    //     alert("User @" + data.gametag + " has been registered successfully");
-    //     // Clear form
-    //     clearing();
-    //     // Hide the form
-    //     document.getElementById("form-container").style.display = "block";
-    // });
+    const postData = JSON.stringify(newUser);
+    fetch("https://signiflyproject-7ef5.restdb.io/rest/users-list", {
+    method: "post",
+    headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "x-apikey": "618cb901fc71545b0f5e06b0",
+        "cache-control": "no-cache"
+    },
+    body: postData
+    })
+    .then(res => res.json())
+    .then(data => {
+            // User registered message
+            alert("User @" + newUser.gametag + " has been registered successfully");
+            // Clear form
+            clearing();
+            // Hide the form
+            document.getElementById("info-wrapper").style.display = "none";
+            document.getElementById("form-container").style.display = "none";
+    });
 }
 
 
