@@ -20,7 +20,8 @@ let selectedSkills;
 
 import eyeOpen from "./public/eye.png";
 import eyeClose from "./public/eye_crossed.png";
-import webBackground from "./public/web-background.png";
+import webBackground from "./public/web_background.png";
+import logoSvg from "./public/logo.svg";
 
 export const start = () => {
     // Set background image
@@ -100,7 +101,7 @@ function getUsers () {
 
 async function logo() {
     // Load logo from svg file
-    let response = await fetch("public/logo.svg");
+    let response = await fetch(logoSvg);
     let data = await response.text();
     document.getElementById("logo").innerHTML = data;
     // Assign class to each part of the logo
