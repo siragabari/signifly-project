@@ -22,7 +22,7 @@ import eyeOpen from "./public/eye.png";
 import eyeClose from "./public/eye_crossed.png";
 import webBackground from "./public/web_background.png";
 import logoSvg from "./public/logo.svg";
-import check from "./public/check.png";
+import checkImage from "./public/check.png";
 
 export const start = () => {
     // Set background image
@@ -30,7 +30,7 @@ export const start = () => {
     // Set checkboxes image
     document.querySelectorAll("input[type=checkbox]").forEach(function(element) {
         if(element.checked === true) {
-            element.style.backgroundImage = "url("+check+")";
+            element.style.backgroundImage = "url("+checkImage+")";
         }
     });
     // Open the form

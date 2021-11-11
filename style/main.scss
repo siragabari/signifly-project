@@ -147,7 +147,7 @@ form {
         &:checked {
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 70%;
+            background-size: contain;
             background-color: $blue_01_light;
             outline: 1px solid $blue_01_pastel;
         }
