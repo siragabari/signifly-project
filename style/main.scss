@@ -1,0 +1,372 @@
+@import './style/colors.scss';
+@import './style/fonts.scss';
+
+body {
+    background-image: url("images/web-background.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-position: fixed;
+    background-attachment: fixed;
+}
+
+#start {
+    left: 50vw;
+    top: 75vh;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-family: 'uniform-medium';
+    font-size: 1.2em;
+    width: 10vw;
+    padding: 2vh;
+    background-color: transparent;
+    border: 2px solid $orange_01_light;
+    border-radius: 5vh;
+    color: $orange_01_light;
+    transition: background-color 0.5s, color 1.5s ease;
+    
+    &:hover {
+        background-color: $orange_01_light;
+        border: 2px solid $orange_01_light;
+        color: $grey_01;
+    }
+}
+
+#form-container {
+    display: none;
+    background-color: $grey_01_medium;
+    border-radius: 5vw;
+    width: 70vw;
+    height: 80vh;
+    left: 50vw;
+    top: 50vh;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    #close {
+        position: relative;
+        float: right;
+        transform: translate(100%, -50%);
+        height: 5vh;
+        width: 5vh;
+        background-color: transparent;
+        border: 1px solid $blue_01_pastel;
+        color: $blue_01_pastel;
+        border-radius: 50%;
+        font-family: 'sharphiro-regular';
+        font-size: 1.2em;
+
+        &:hover {
+            font-size: 1.5em;
+        }
+    }
+
+    #line {
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    
+        path {
+            stroke: $blue_01_light;
+            stroke-width: 20;
+            stroke-linecap: round;
+            animation: outline 3s ease-in-out forwards;
+        }
+        @keyframes outline {
+            100% {stroke-dashoffset: 0;}
+        }
+    }
+
+    #logo {
+        left: 50%;
+        top: 12%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        height: 10vh;
+        width: 10vw;
+        transition-delay: 2s;
+    
+        .darkPart {
+            animation: changeColor1 3s linear forwards;
+        }
+        @keyframes changeColor1 {
+            0% {fill: $grey_01_medium;}
+            100% {fill: $blue_01_light;}
+        }
+    
+        .lightPart {
+            animation: changeColor2 3s linear forwards;
+        }
+        @keyframes changeColor2 {
+            0% {fill: $blue_01_light; }
+            100% {fill: $grey_01_medium;}
+        }
+    }
+}
+
+form {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    color: $white;
+
+    label {
+        font-family: 'sharphiro-regular';
+        font-size: 1em;
+    }
+    .title {
+        margin-block: 0.5vh;
+        font-family: 'sharphiro-bold';
+        font-size: 1.7em;
+        grid-column: 1/-1;
+        color: $blue_01_light;
+    }
+    .error {
+        font-family: 'sharphiro-regular';
+        font-size: 0.9em;
+        visibility: hidden;
+        color: $orange_01;
+    }
+
+    input[type=checkbox] {
+        margin-right: 0.5vw;
+        -webkit-appearance: none;
+        appearance: none;
+        height: 3vh;
+        width: 3vh;
+        vertical-align:middle;
+        outline: 1px solid $blue_01_pastel;
+        border-radius: 20%;
+        transition: color 0.5s ease;
+    
+        &:hover {
+            outline: 2px solid $blue_01_light;
+        }
+    
+        &:checked {
+            background-image: url("images/check.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 70%;
+            background-color: $blue_01_light;
+            outline: 1px solid $blue_01_pastel;
+        }
+    }
+
+    #userInterests {
+        display: none;
+        animation: appear 2s linear forwards;
+            @keyframes appear {
+                0% {transform: translateX(10vw); opacity: 0;}
+                100% {transform: translateX(0); opacity: 1;}
+            }
+
+            #games {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-column-gap: 2vw;
+                grid-row-gap: 1vh;
+            }
+            #gamesError {
+                grid-column: 1/-1;
+            }
+        
+            #skills {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-column-gap: 2vw;
+                grid-row-gap: 1vh;
+            }
+            #skillsError {
+                grid-column: 1/-1;
+            }
+    }
+
+    #info-wrapper {
+        display: none;
+        animation: appear 2s linear forwards;
+        @keyframes appear {
+            0% {transform: translateX(10vw); opacity: 0;}
+            100% {transform: translateX(0); opacity: 1;}
+        }
+            #userInformation {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 5vw;
+                grid-row-gap: 1vh;
+
+                    ::placeholder {
+                        color: $blue_01_pastel;
+                        opacity: 0.5;
+                    }
+
+                    input {
+                        padding-left: 1em;
+                        font-family: 'sharphiro-regular';
+                        font-size: 0.9em;
+                        margin-block: 0.5vh;
+                        border: none;
+                        border-radius: 2vh;
+                        width: 100%;
+                        padding-block: 0.8vh;
+                        border: none;
+                        border: 1px solid $blue_01_pastel;
+                        background-color: transparent;
+                        color: $white;
+                
+                        &:hover {
+                            outline: 2px solid $blue_01_light;
+                        }
+                        
+                        &:focus {
+                            background-color: $blue_01_pastel;
+                            outline: 2px solid $blue_01_light;
+                            color: $grey_01_medium;
+                        }
+                    }
+                    .mistake {
+                        outline: 2px solid $orange_01;
+                    }
+
+                    select {
+                        font-family: 'sharphiro-regular';
+                        font-size: 0.9em;
+                        margin-block: 0.5vh;
+                        border: none;
+                        border-radius: 2vh;
+                        width: 100%;
+                        padding-block: 0.8vh;
+                        border: none;
+                        outline: 1px solid $blue_01_pastel;
+                        background-color: transparent;
+                        color: $white;
+                    
+                        &:hover {
+                            outline: 3px solid $blue_01_light;
+                        }
+                        &:focus {
+                            background-color: $blue_01_pastel;
+                            outline: 3px solid $blue_01_light;
+                        }
+                    }
+
+                    #phoneNumber {
+                        display: grid;
+                        grid-template-columns: 5vw 1fr;
+                        grid-column-gap: 1vw;
+                    }
+                
+                    #password {
+                        grid-column: 1/2;
+                        #password-container {
+                            position:relative;
+
+                            #togglePassword {
+                                position:absolute;
+                                vertical-align: middle;
+                                bottom: 1.5vh;
+                                right: 0.3vw;
+                                height: 1.7vh;
+                                width: 1.7vw;
+                                pointer-events: all;
+
+                                &:hover {
+                                    height: 1.8vh;
+                                    width: 1.8vw;
+                                }
+                            }
+                        }
+                    }
+
+                    #confirmPassword-container {
+                        position:relative;
+
+                        #toggleConfirmPassword {
+                            position:absolute;
+                            vertical-align: middle;
+                            bottom: 1.5vh;
+                            right: 0.3vw;
+                            height: 1.7vh;
+                            width: 1.7vw;
+                            pointer-events: all;
+
+                            &:hover {
+                                height: 1.8vh;
+                                width: 1.8vw;
+                            }
+                        }
+                    }
+            }
+    }
+
+    .buttons {
+        display: flex;
+        grid-column: 2;
+        text-align: right;
+        transform: translateX(50%);
+
+        #continue {
+            font-family: 'uniform-black';
+            font-size: 1.2em;
+            width: 25%;
+            padding: 2vh;
+            background-color: transparent;
+            border: 2px solid $orange_01_light;
+            border-radius: 5vh;
+            color: $orange_01_light;
+            transition: background-color 0.5s, color 1.5s ease;
+    
+            &:hover {
+                background-color: $orange_01_light;
+                border: 2px solid $orange_01_light;
+                color: $grey_01_medium;
+            }
+        }
+
+        #signUp {
+            font-family: 'uniform-black';
+            font-size: 1.2em;
+            width: 25%;
+            padding: 2vh;
+            background-color: transparent;
+            border: 2px solid $orange_01_light;
+            border-radius: 5vh;
+            color: $orange_01_light;
+            transition: background-color 0.5s, color 1.5s ease;
+    
+            &:hover {
+                background-color: $orange_01_light;
+                border: 2px solid $orange_01_light;
+                color: $grey_01_medium;
+            }
+        }
+
+        .clear {
+            font-family: 'uniform-medium';
+            font-size: 1.2em;
+            width: 25%;
+            padding: 1vh;
+            background-color: transparent;
+            border: none;
+            border-radius: 5vh;
+            color: $blue_01_pastel;
+            transition: color 0.5s ease;
+    
+            &:hover {
+                color: $orange_01_light;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
