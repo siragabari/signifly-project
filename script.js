@@ -47,9 +47,9 @@ function clearing() {
     });
     // Reset passwords
     document.getElementById("password").type = "password";
-    document.getElementById("togglePassword").src = 'images/eye_crossed.png';
+    document.getElementById("togglePassword").src = 'public/eye_crossed.png';
     document.getElementById("confirmPassword").type = "password";
-    document.getElementById("toggleConfirmPassword").src = 'images/eye_crossed.png';
+    document.getElementById("toggleConfirmPassword").src = 'public/eye_crossed.png';
 }
 
 function managingForm() {
@@ -94,7 +94,7 @@ function getUsers () {
 
 async function logo() {
     // Load logo from svg file
-    let response = await fetch("images/logo.svg");
+    let response = await fetch("public/logo.svg");
     let data = await response.text();
     document.getElementById("logo").innerHTML = data;
     // Assign class to each part of the logo
@@ -119,10 +119,10 @@ function togglingPassword() {
     const password = document.getElementById('passwordIn');
     if (password.type === "password") {
         password.type = "text";
-        document.getElementById('togglePassword').src= "images/eye.png";
+        document.getElementById('togglePassword').src= "public/eye.png";
     } else {
         password.type = "password";
-        document.getElementById('togglePassword').src= "images/eye_crossed.png";
+        document.getElementById('togglePassword').src= "public/eye_crossed.png";
     }
 }
 
@@ -131,10 +131,10 @@ function togglingConfirmPassword() {
     const confirmPassword = document.getElementById('confirmPasswordIn');
     if (confirmPassword.type === "password") {
         confirmPassword.type = "text";
-        document.getElementById('toggleConfirmPassword').src= "images/eye.png";
+        document.getElementById('toggleConfirmPassword').src= "public/eye.png";
     } else {
         confirmPassword.type = "password";
-        document.getElementById('toggleConfirmPassword').src= "images/eye_crossed.png";
+        document.getElementById('toggleConfirmPassword').src= "public/eye_crossed.png";
     }
 }
 
