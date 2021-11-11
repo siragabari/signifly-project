@@ -136,12 +136,12 @@ form {
         height: 3vh;
         width: 3vh;
         vertical-align:middle;
-        outline: 1px solid $blue_01_pastel;
+        border: 1px solid $blue_01_pastel;
         border-radius: 20%;
         transition: color 0.5s ease;
     
         &:hover {
-            outline: 2px solid $blue_01_light;
+            border: 2px solid $blue_01_light;
         }
     
         &:checked {
@@ -149,7 +149,7 @@ form {
             background-position: center;
             background-size: contain;
             background-color: $blue_01_light;
-            outline: 1px solid $blue_01_pastel;
+            border: 1px solid $blue_01_pastel;
         }
     }
 
@@ -209,23 +209,23 @@ form {
                         border-radius: 2vh;
                         width: 100%;
                         padding-block: 0.8vh;
-                        border: none;
+                        // border: none;
                         border: 1px solid $blue_01_pastel;
                         background-color: transparent;
                         color: $white;
                 
                         &:hover {
-                            outline: 2px solid $blue_01_light;
+                            border: 2px solid $blue_01_light;
                         }
                         
                         &:focus {
                             background-color: $blue_01_pastel;
-                            outline: 2px solid $blue_01_light;
+                            border: 2px solid $blue_01_light;
                             color: $grey_01_medium;
                         }
                     }
                     .mistake {
-                        outline: 2px solid $orange_01;
+                        border: 2px solid $orange_01;
                     }
 
                     select {
@@ -238,17 +238,17 @@ form {
                         border-radius: 2vh;
                         width: 100%;
                         padding-block: 0.8vh;
-                        border: none;
-                        outline: 1px solid $blue_01_pastel;
+                        // border: none;
+                        border: 1px solid $blue_01_pastel;
                         background-color: transparent;
                         color: $white;
                     
                         &:hover {
-                            outline: 3px solid $blue_01_light;
+                            border: 3px solid $blue_01_light;
                         }
                         &:focus {
                             background-color: $blue_01_pastel;
-                            outline: 3px solid $blue_01_light;
+                            border: 3px solid $blue_01_light;
                         }
                     }
 
