@@ -22,10 +22,17 @@ import eyeOpen from "./public/eye.png";
 import eyeClose from "./public/eye_crossed.png";
 import webBackground from "./public/web_background.png";
 import logoSvg from "./public/logo.svg";
+import check from "./public/check.svg";
 
 export const start = () => {
     // Set background image
     document.body.style.backgroundImage = "url("+webBackground+")";
+    // Set checkboxes image
+    document.querySelectorAll("input[type=checkbox]").forEach(function(element) {
+        if(element.checked === true) {
+            element.style.backgroundImage = "url("+check+")";
+        }
+    });
     // Open the form
     document.getElementById("start").addEventListener('click', managingForm);
     // Close the form
