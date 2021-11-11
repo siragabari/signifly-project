@@ -20,9 +20,11 @@ let selectedSkills;
 
 import eyeOpen from "./public/eye.png";
 import eyeClose from "./public/eye_crossed.png";
-import background from "./public/web-background.png";
+import backgroundImage from "./public/web-background.png";
 
 export const start = () => {
+    // Set background image
+    document.body.backgroundImage = backgroundImage;
     // Open the form
     document.getElementById("start").addEventListener('click', managingForm);
     // Close the form
