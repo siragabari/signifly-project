@@ -69,9 +69,9 @@ body {
             stroke: $blue_01_light;
             stroke-width: 20;
             stroke-linecap: round;
-            animation: outline 3s ease-in-out forwards;
+            animation: lineAni 3s ease-in-out forwards;
         }
-        @keyframes outline {
+        @keyframes lineAni {
             100% {stroke-dashoffset: 0;}
         }
     }
@@ -229,6 +229,8 @@ form {
                     }
 
                     select {
+                        -webkit-appearance: none;
+                        appearance: none;
                         font-family: 'sharphiro-regular';
                         font-size: 0.9em;
                         margin-block: 0.5vh;
