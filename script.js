@@ -22,7 +22,7 @@ import eyeOpen from "./public/eye.png";
 import eyeClose from "./public/eye_crossed.png";
 import webBackground from "./public/web_background.png";
 import logoSvg from "./public/logo.svg";
-import check from "./public/check.svg";
+import check from "./public/check.png";
 
 export const start = () => {
     // Set background image
